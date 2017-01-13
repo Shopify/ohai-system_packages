@@ -12,15 +12,12 @@ You should use this plugin together with the [apt cookbook](https://github.com/o
 
 # Installing
 
-You should use the [ohai cookbook](https://github.com/opscode-cookbooks/ohai) to install these plugins. It requires [a pull request](https://github.com/opscode-cookbooks/ohai/pull/3) to be merged. Then you can add this cookbook to the node's runlist and add this configuration to the node (or role):
+You should use the [ohai cookbook](https://github.com/opscode-cookbooks/ohai) to install this plugins. Then you can add this cookbook to the node's runlist and add this configuration to the node (or role):
 
-    "default_attributes": {
-      "ohai": {
-        "plugins": {
-          "ohai-system_packages": "plugins"
-        }
-      }
-    }
+    ohai_plugin 'ohai-system_packages' do
+      source_file 'ohai-system_packages.rb'
+      cookbook 'ohai-system_packages'
+    end
 
 # Using
 
